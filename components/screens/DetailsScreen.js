@@ -1,10 +1,5 @@
 import React, { useEffect } from 'react';
-import {
-    Animated,
-    Text,
-    View,
-    StyleSheet,
-} from 'react-native';
+import { Animated, Text, View, StyleSheet } from 'react-native';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import { ITEM_HEIGHT } from '../constants/Dimenstions'
 
@@ -34,13 +29,7 @@ const DetailsScreen = ({ route }) => {
             <View style={{ flex: 1 }}>
                 <Animated.Image
                     source={{ uri: item.poster }}
-                    style={{
-                        width: '100%',
-                        height: ITEM_HEIGHT,
-                        opacity: imageOpacity,
-                        position: 'absolute',
-                        top: 0,
-                    }}
+                    style={{ width: '100%', height: ITEM_HEIGHT, opacity: imageOpacity, position: 'absolute', top: 0, }}
                     resizeMode="cover"
                 />
             </View>
