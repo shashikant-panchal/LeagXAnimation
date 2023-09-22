@@ -5,7 +5,6 @@ import {
     View,
     StyleSheet,
 } from 'react-native';
-import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import { SPACING, OVERFLOW_HEIGHT } from '../constants/Dimenstions'
 
 
@@ -26,12 +25,6 @@ const OverflowItems = ({ data, scrollXAnimated }) => {
                             </Text>
                             <View style={styles.itemContainerRow}>
                                 <Text style={[styles.location]}>
-                                    <EvilIcons
-                                        name="location"
-                                        size={16}
-                                        color="black"
-                                        style={{ marginRight: 5 }}
-                                    />
                                     {item.location}
                                 </Text>
                                 <Text style={[styles.date]}>{item.date}</Text>

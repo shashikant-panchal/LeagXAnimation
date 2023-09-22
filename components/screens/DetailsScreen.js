@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { Animated, Text, View, StyleSheet } from 'react-native';
-import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import { ITEM_HEIGHT } from '../constants/Dimenstions';
 
 const DetailsScreen = ({ route, navigation }) => {
@@ -79,7 +78,6 @@ const DetailsScreen = ({ route, navigation }) => {
             >
                 <Text style={styles.title}>{item.title}</Text>
                 <Text style={styles.location}>
-                    <EvilIcons name="location" size={16} color="black" style={{ marginRight: 5 }} />
                     {item.location}
                 </Text>
                 <Text style={styles.date}>{item.date}</Text>
