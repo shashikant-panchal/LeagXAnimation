@@ -4,7 +4,7 @@ import { FlingGestureHandler, Directions, State, } from 'react-native-gesture-ha
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import OverflowItems from '../common/OverflowItems';
-import { SPACING, OVERFLOW_HEIGHT, ITEM_WIDTH, ITEM_HEIGHT, VISIBLE_ITEMS } from '../constants/Dimenstions'
+import { SPACING, ITEM_WIDTH, ITEM_HEIGHT, VISIBLE_ITEMS } from '../constants/Dimenstions'
 import { DATA } from '../common/DATA';
 
 const HomeScreen = () => {
