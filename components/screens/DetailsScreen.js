@@ -1,16 +1,23 @@
 import React, { useEffect } from 'react';
 import { Animated, Text, View, StyleSheet } from 'react-native';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
-import { ITEM_HEIGHT } from '../constants/Dimenstions'
+import { ITEM_HEIGHT } from '../constants/Dimenstions';
 
-const DetailsScreen = ({ route }) => {
+const DetailsScreen = ({ route, navigation }) => {
     const { item } = route.params;
 
+    const imageScale = new Animated.Value(0.75);
     const imageOpacity = new Animated.Value(1);
     const textSlide = new Animated.Value(0);
 
+
     useEffect(() => {
         Animated.parallel([
+            Animated.timing(imageScale, {
+                toValue: 1,
+                duration: 700,
+                useNativeDriver: false,
+            }),
             Animated.timing(imageOpacity, {
                 toValue: 0.7,
                 duration: 1000,
@@ -24,12 +31,33 @@ const DetailsScreen = ({ route }) => {
         ]).start();
     }, []);
 
+    useEffect(() => {
+        const unsubscribe = navigation.addListener('beforeRemove', () => {
+            Animated.timing(imageScale, {
+                toValue: 0.95,
+                duration: 1000,
+                useNativeDriver: false,
+            }).start();
+        });
+
+        return unsubscribe;
+    }, [navigation]);
+
     return (
         <View style={{ flex: 1, paddingTop: 0, paddingHorizontal: 0 }}>
             <View style={{ flex: 1 }}>
                 <Animated.Image
                     source={{ uri: item.poster }}
-                    style={{ width: '100%', height: ITEM_HEIGHT, opacity: imageOpacity, position: 'absolute', top: 0, }}
+                    style={[
+                        {
+                            width: '100%',
+                            height: ITEM_HEIGHT,
+                            position: 'absolute',
+                            top: 0,
+                            opacity: imageOpacity,
+                        },
+                        { transform: [{ scale: imageScale }] }
+                    ]}
                     resizeMode="cover"
                 />
             </View>
@@ -60,8 +88,7 @@ const DetailsScreen = ({ route }) => {
     );
 };
 
-
-export default DetailsScreen
+export default DetailsScreen;
 
 const styles = StyleSheet.create({
     title: {
@@ -69,20 +96,20 @@ const styles = StyleSheet.create({
         fontWeight: '900',
         textTransform: 'uppercase',
         letterSpacing: -1,
-        color: 'black'
+        color: 'black',
     },
     location: {
         fontSize: 16,
         color: 'black',
-        fontWeight: '700'
+        fontWeight: '700',
     },
     date: {
         fontSize: 12,
         color: 'black',
-        fontWeight: '900'
+        fontWeight: '900',
     },
     detailsContainer: {
         paddingTop: 0,
-        marginLeft: 20
-    }
+        marginLeft: 20,
+    },
 });
