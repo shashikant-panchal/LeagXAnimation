@@ -70,7 +70,7 @@ const DetailsScreen = ({ route, navigation }) => {
                             {
                                 translateY: textSlide.interpolate({
                                     inputRange: [0, 1],
-                                    outputRange: [0, -140],
+                                    outputRange: [0, -150],
                                 }),
                             },
                         ],
