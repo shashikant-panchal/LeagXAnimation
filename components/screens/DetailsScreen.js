@@ -5,7 +5,7 @@ import { ITEM_HEIGHT } from '../constants/Dimenstions';
 const DetailsScreen = ({ route, navigation }) => {
     const { item } = route.params;
 
-    const imageScale = new Animated.Value(0.75);
+    const imageScale = new Animated.Value(0.85);
     const imageOpacity = new Animated.Value(1);
     const textSlide = new Animated.Value(0);
 
@@ -14,7 +14,7 @@ const DetailsScreen = ({ route, navigation }) => {
         Animated.parallel([
             Animated.timing(imageScale, {
                 toValue: 1,
-                duration: 700,
+                duration: 500,
                 useNativeDriver: false,
             }),
             Animated.timing(imageOpacity, {
