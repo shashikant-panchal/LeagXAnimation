@@ -151,39 +151,5 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         backgroundColor: 'white',
-    },
-    title: {
-        fontSize: 28,
-        fontWeight: '900',
-        textTransform: 'uppercase',
-        letterSpacing: -1,
-        color: 'black'
-    },
-    location: {
-        fontSize: 16,
-        color: 'black',
-        fontWeight: '700'
-    },
-    date: {
-        fontSize: 12,
-        color: 'black',
-        fontWeight: '900'
-    },
-    itemContainer: {
-        height: OVERFLOW_HEIGHT,
-        padding: SPACING * 2,
-    },
-    itemContainerRow: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-    },
-    overflowContainer: {
-        height: OVERFLOW_HEIGHT,
-        overflow: 'hidden',
-    },
-    detailsContainer: {
-        paddingTop: 0,
-        marginLeft: 20
     }
 });
