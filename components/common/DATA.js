@@ -33,7 +33,7 @@ export const DATA = [
         title: 'Berlin',
         location: 'Berlin, Germany',
         date: 'Sep 21st, 2023',
-        poster: 'https://media.istockphoto.com/id/1381427766/photo/berlin-skyline-panorama-with-famous-tv-tower-at-alexanderplatz-germany.webp?b=1&s=170667a&w=0&k=20&c=sgV-bs7dkRwBHsiwtLVsrWrqOGPlYyFtMlZoPZp2dcw=',
+        poster: 'https://wallpaperaccess.com/full/1124592.jpg',
     },
     {
         title: 'Liboa',
